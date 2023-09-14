@@ -75,7 +75,7 @@ public class Arvore_Binaria_Desbalanceada_02 {
                 String[] words = line.split("\\s+"); // Divide a linha em palavras
                 for (String word : words) {
                     // Remover sinais de pontuação e números
-                    word = word.replaceAll("[,.!?()\\d\"]", "").toLowerCase();
+                    word = word.replaceAll("[,.!?()\\d\"]", "").toLowerCase().trim();
                     if (!word.isEmpty() && !isInStopList(word)) {
                         bst.insert(word);
                     }
@@ -103,5 +103,5 @@ public class Arvore_Binaria_Desbalanceada_02 {
             e.printStackTrace();
         }
         return false;
-    }
+    }       
 }

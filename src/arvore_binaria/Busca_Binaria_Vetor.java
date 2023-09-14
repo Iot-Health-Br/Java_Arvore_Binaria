@@ -99,10 +99,12 @@ public class Busca_Binaria_Vetor {
                 String[] words = line.split("\\s+"); // Divide a linha em palavras
 
                 for (String word : words) {
-                    if (!stopwords.contains(word) && !word.isEmpty()) {
+                    word = word.trim(); // Remova espaços em branco extras
+                    if (!word.isEmpty() && !stopwords.contains(word)) {
+                        // Verifica se a palavra não é uma stopword
                         bst.insert(word);
                     }
-                }
+                }            
             }
             br.close();
 
@@ -123,7 +125,7 @@ public class Busca_Binaria_Vetor {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {
-                stopwords.add(line.toLowerCase()); // Converte stopwords para minúsculas
+                stopwords.add(line.toLowerCase().trim()); // Converte stopwords para minúsculas
             }
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo de stopwords: " + e.getMessage());
@@ -134,6 +136,6 @@ public class Busca_Binaria_Vetor {
 
     private static String removePunctuation(String text) {
         // Remove a pontuação, mas mantém os acentos
-        return text.replaceAll("[^\\p{L}\\s]", "");
+        return text.replaceAll("[,.()0-9]", "");
     }
 }

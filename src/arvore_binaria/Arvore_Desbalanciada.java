@@ -88,7 +88,8 @@ public class Arvore_Desbalanciada {
                 String[] words = mainLine.split("\\s+");
                 for (String word : words) {
                     if (!stopWords.contains(word)) {
-                        tree.insert(word);
+                        tree.insert(word.toLowerCase().replaceAll("[,.()0-9]", ""));
+                        // Passa para minuscula, e substitui a pontuaçao que esta na  palavra
                     }
                 }
             }
