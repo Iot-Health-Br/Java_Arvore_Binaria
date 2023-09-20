@@ -125,6 +125,7 @@ public class Busca_Binaria_Vetor {
         BinarySearchTree bst = new BinarySearchTree();
 
         try {
+            // Cria uma lista das Stop words
             Set<String> stopwords = readStopwords(stopFileName);
 
             BufferedReader br = new BufferedReader(new FileReader(fileName));

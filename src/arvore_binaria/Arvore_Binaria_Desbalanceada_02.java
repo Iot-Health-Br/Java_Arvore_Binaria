@@ -154,5 +154,5 @@ public class Arvore_Binaria_Desbalanceada_02 {
         catch (IOException e) {
             e.printStackTrace();}
         return false;
-    }       
+    }
 }
