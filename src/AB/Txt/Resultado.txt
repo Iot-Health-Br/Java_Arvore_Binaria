@@ -1,4 +1,0 @@
-Usando Busca Binária (Vetor Dinâmico):
-Tempo: 1526000 ns
-Comparacoes: 182
-
